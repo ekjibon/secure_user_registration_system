@@ -11,6 +11,8 @@ A client-side web application for user registration and login with password stre
 - **IndexedDB Persistence** — The SQLite database file is persisted to IndexedDB, surviving page reloads and browser restarts
 - **Dashboard** — After login, view all registered users and their password hashes
 
+https://ekjibon.github.io/secure_user_registration_system
+
 ## Project Structure
 
 ```
