@@ -13,11 +13,22 @@
 
     <div class="container">
 
+        <button id="darkModeToggle" class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
         <h2>User Registration</h2>
 
-        <input type="text" id="username" placeholder="Enter Username">
+        <input type="text" id="fullName" placeholder="Enter Full Name" oninput="validateField('fullName')">
+        <span class="error" id="fullNameError"></span>
 
-        <input type="password" id="password" placeholder="Enter Password" onkeyup="showStrength()">
+        <input type="email" id="email" placeholder="Enter Email" oninput="validateField('email')">
+        <span class="error" id="emailError"></span>
+
+        <input type="tel" id="phone" placeholder="Enter Phone Number" oninput="validateField('phone')">
+        <span class="error" id="phoneError"></span>
+
+        <input type="password" id="password" placeholder="Enter Password"
+            onkeyup="showStrength(); validateField('password')">
+        <span class="error" id="passwordError"></span>
 
         <p id="strengthText"></p>
 
@@ -31,6 +42,35 @@
     </div>
 
     <script src="script.js"></script>
+    <script>initDarkMode();</script>
+
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <p class="heading">Assignment</p>
+                <p><strong>Final</strong></p>
+                <p><strong>Course:</strong> Network Security</p>
+                <p><strong>Code:</strong> 115</p>
+                <p><strong>Submission:</strong> 11 June 2026</p>
+            </div>
+            <div class="divider"></div>
+            <div class="footer-col">
+                <p class="heading">Submitted To</p>
+                <p>Dr. Risala tasin Khan</p>
+                <p>Professor</p>
+                <p>Jahangirnagar University</p>
+            </div>
+            <div class="divider"></div>
+            <div class="footer-col">
+                <p class="heading">Submitted By</p>
+                <p><strong>ROBIUL HOSSAIN</strong></p>
+                <p>ID: 25306</p>
+                <p>PGDIT</p>
+                <p>IIT, Jahangirnagar University</p>
+                <p>Savar, Dhaka 1342, Bangladesh</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 

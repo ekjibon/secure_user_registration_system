@@ -2,9 +2,11 @@ body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
 }
 
 /* Main Box */
@@ -69,4 +71,140 @@ a:hover {
 /* Home Buttons */
 .home-buttons button {
     margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 25px;
+    padding: 20px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.8;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.footer .footer-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.footer .footer-col {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.footer .footer-col p {
+    margin: 4px 0;
+    font-size: 13px;
+}
+
+.footer .footer-col .heading {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.footer .divider {
+    width: 1px;
+    background: #ddd;
+    align-self: stretch;
+}
+
+body.dark-mode .footer {
+    color: #aaa;
+}
+
+body.dark-mode .footer .footer-col .heading,
+body.dark-mode .footer strong {
+    color: #e0e0e0;
+}
+
+body.dark-mode .footer .divider {
+    background: #444;
+}
+
+/* Inline Validation */
+.error {
+    display: block;
+    color: red;
+    font-size: 12px;
+    text-align: left;
+    margin-top: -5px;
+    margin-bottom: 5px;
+    min-height: 16px;
+}
+
+input.invalid {
+    border-color: red;
+}
+
+input.valid {
+    border-color: green;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    font-size: 20px;
+    background: #007BFF;
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #1a1a2e;
+}
+
+body.dark-mode .container {
+    background: #16213e;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p {
+    color: #e0e0e0;
+}
+
+body.dark-mode input {
+    background: #0f3460;
+    border-color: #1a1a5e;
+    color: #e0e0e0;
+}
+
+body.dark-mode input::placeholder {
+    color: #8899aa;
+}
+
+body.dark-mode th {
+    background: #0f3460;
+}
+
+body.dark-mode td {
+    color: #e0e0e0;
+}
+
+body.dark-mode a {
+    color: #4da6ff;
+}
+
+body.dark-mode .dark-toggle {
+    background: #0f3460;
 }

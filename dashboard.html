@@ -57,13 +57,17 @@
 <body>
 
     <div class="container">
+        <button id="darkModeToggle" class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
         <h2>Dashboard</h2>
         <p class="logged-in" id="loggedInUser"></p>
         <h3>All Registered Users</h3>
         <table>
             <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Full Name</th>
+                    <th>Phone</th>
                     <th>Password Hash (SHA-512)</th>
                 </tr>
             </thead>
@@ -78,21 +82,50 @@
         (async function () {
             await initDB();
             const params = new URLSearchParams(window.location.search);
-            const username = params.get("username");
-            document.getElementById("loggedInUser").innerText = "Logged in as: " + (username || "Unknown");
+            const email = params.get("email");
+            document.getElementById("loggedInUser").innerText = "Logged in as: " + (email || "Unknown");
             const users = loadAllUsers();
             const tbody = document.getElementById("userTableBody");
             if (users.length === 0) {
-                tbody.innerHTML = "<tr><td colspan='2' style='text-align:center;font-family:sans-serif'>No users registered yet.</td></tr>";
+                tbody.innerHTML = "<tr><td colspan='4' style='text-align:center;font-family:sans-serif'>No users registered yet.</td></tr>";
             } else {
                 users.forEach(u => {
                     const tr = document.createElement("tr");
-                    tr.innerHTML = "<td style='font-family:sans-serif'>" + u.username + "</td><td>" + u.password_hash + "</td>";
+                    tr.innerHTML = "<td style='font-family:sans-serif'>" + u.email + "</td><td style='font-family:sans-serif'>" + u.full_name + "</td><td style='font-family:sans-serif'>" + u.phone + "</td><td>" + u.password_hash + "</td>";
                     tbody.appendChild(tr);
                 });
             }
         })();
+        initDarkMode();
     </script>
+
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-col">
+                <p class="heading">Assignment</p>
+                <p><strong>Final</strong></p>
+                <p><strong>Course:</strong> Network Security</p>
+                <p><strong>Code:</strong> 115</p>
+                <p><strong>Submission:</strong> 11 June 2026</p>
+            </div>
+            <div class="divider"></div>
+            <div class="footer-col">
+                <p class="heading">Submitted To</p>
+                <p>Dr. Risala tasin Khan</p>
+                <p>Professor</p>
+                <p>Jahangirnagar University</p>
+            </div>
+            <div class="divider"></div>
+            <div class="footer-col">
+                <p class="heading">Submitted By</p>
+                <p><strong>ROBIUL HOSSAIN</strong></p>
+                <p>ID: 25306</p>
+                <p>PGDIT</p>
+                <p>IIT, Jahangirnagar University</p>
+                <p>Savar, Dhaka 1342, Bangladesh</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 
